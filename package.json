@@ -1,0 +1,52 @@
+{
+  "name": "react-native-orientation-change-provider",
+  "version": "0.10.0",
+  "description": "Simple React Native Provider component that forces a re-render when orientation changes.",
+  "main": "index.js",
+  "scripts": {
+    "precommit": "lint-staged",
+    "release": "npmpub"
+  },
+  "author": "Krister Kari",
+  "license": "MIT",
+  "files": [
+    "index.js",
+    "CHANGELOG.md",
+    "README.md"
+  ],
+  "keywords": [
+    "React",
+    "ReactNative",
+    "react-native",
+    "provider",
+    "orientation change"
+  ],
+  "bugs": {
+    "url": "https://github.com/kristerkari/react-native-orientation-change-provider/issues"
+  },
+  "homepage": "https://github.com/kristerkari/react-native-orientation-change-provider#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kristerkari/react-native-orientation-change-provider.git"
+  },
+  "devDependencies": {
+    "husky": "^0.14.3",
+    "lint-staged": "^7.0.0",
+    "npmpub": "^3.1.0",
+    "prettier": "^1.11.1"
+  },
+  "peerDependencies": {
+    "react-native": ">=0.45.0"
+  },
+  "lint-staged": {
+    "*.{js,md,json}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "prettier": {
+    "semi": true,
+    "singleQuote": false,
+    "trailingComma": "none"
+  }
+}
