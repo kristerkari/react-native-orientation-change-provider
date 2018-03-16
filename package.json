@@ -8,7 +8,7 @@
   "scripts": {
     "prepublish": "npm run build",
     "prebuild": "rimraf dist && rimraf es",
-    "build": "babel index.js --out-dir dist && mkdir es && cp index.js es/",
+    "build": "BABEL_ENV=es5 babel index.js --out-dir dist && BABEL_ENV=es2015 babel index.js --out-dir es",
     "precommit": "lint-staged",
     "release": "npmpub"
   },
@@ -60,9 +60,18 @@
     "trailingComma": "none"
   },
   "babel": {
-    "presets": [
-      "es2015",
-      "react"
-    ]
+    "env": {
+      "es5": {
+        "presets": [
+          "es2015",
+          "react"
+        ]
+      },
+      "es2015": {
+        "presets": [
+          "react"
+        ]
+      }
+    }
   }
 }
