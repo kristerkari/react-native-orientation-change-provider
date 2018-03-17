@@ -27,3 +27,5 @@ import { OrientationChangeProvider } from "react-native-orientation-change-provi
   <App />
 </OrientationChangeProvider>;
 ```
+
+Notice that using `OrientationChangeProvider` will force your app to re-render when the orientation changes. It causes all `this.state` from child components to reset. You can work around that by using a global state, for example [Redux](https://redux.js.org/).
