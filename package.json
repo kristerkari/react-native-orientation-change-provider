@@ -10,6 +10,7 @@
     "prebuild": "rimraf dist && rimraf es",
     "build": "BABEL_ENV=es5 babel index.js --out-dir dist && BABEL_ENV=es2015 babel index.js --out-dir es",
     "precommit": "lint-staged",
+    "test": "eslint index.js",
     "release": "npmpub"
   },
   "author": "Krister Kari",
@@ -39,6 +40,8 @@
     "babel-cli": "^6.26.0",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
+    "eslint": "^4.19.1",
+    "eslint-plugin-react": "^7.7.0",
     "husky": "^0.14.3",
     "lint-staged": "^7.0.0",
     "npmpub": "^3.1.0",
@@ -72,6 +75,77 @@
           "react"
         ]
       }
+    }
+  },
+  "eslintConfig": {
+    "parserOptions": {
+      "ecmaVersion": 2017,
+      "sourceType": "module",
+      "ecmaFeatures": {
+        "jsx": true
+      }
+    },
+    "env": {
+      "es6": true
+    },
+    "extends": [
+      "eslint:recommended",
+      "plugin:react/recommended"
+    ],
+    "plugins": [
+      "react"
+    ],
+    "rules": {
+      "for-direction": "error",
+      "no-prototype-builtins": "error",
+      "no-template-curly-in-string": "error",
+      "no-empty-function": "error",
+      "no-loop-func": "error",
+      "no-param-reassign": "error",
+      "no-proto": "error",
+      "no-return-assign": "error",
+      "no-self-compare": "error",
+      "no-throw-literal": "error",
+      "no-sequences": "error",
+      "no-unused-expressions": "error",
+      "no-useless-return": "error",
+      "no-void": "error",
+      "no-with": "error",
+      "no-catch-shadow": "error",
+      "no-delete-var": "error",
+      "no-use-before-define": "error",
+      "no-const-assign": "error",
+      "no-dupe-class-members": "error",
+      "no-duplicate-imports": "error",
+      "radix": [
+        "error",
+        "always"
+      ],
+      "wrap-iife": "error",
+      "lines-between-class-members": [
+        "error",
+        "always"
+      ],
+      "react/prop-types": 0,
+      "react/jsx-uses-react": "error",
+      "react/jsx-uses-vars": "error",
+      "react/button-has-type": "error",
+      "react/display-name": "error",
+      "react/no-deprecated": "error",
+      "react/no-danger": "error",
+      "react/no-direct-mutation-state": "error",
+      "react/no-render-return-value": "error",
+      "react/no-string-refs": "error",
+      "react/no-typos": "error",
+      "react/prefer-es6-class": [
+        "error",
+        "always"
+      ],
+      "react/require-render-return": "error",
+      "react/no-unescaped-entities": "error",
+      "react/react-in-jsx-scope": "error",
+      "react/jsx-boolean-value": "error",
+      "react/jsx-no-duplicate-props": "error"
     }
   }
 }

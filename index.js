@@ -22,12 +22,14 @@ export class OrientationChangeProvider extends Component {
       });
     });
   }
+
   shouldComponentUpdate(nextProps, nextState) {
     return (
       this.state.orientation !== nextState.orientation ||
       this.props.children !== nextProps.children
     );
   }
+
   render() {
     return <Wrapper key={Date.now()}>{this.props.children}</Wrapper>;
   }
