@@ -1,6 +1,6 @@
 {
   "name": "react-native-orientation-change-provider",
-  "version": "0.11.2",
+  "version": "0.11.3",
   "description": "Simple React Native Provider component that forces a re-render when orientation changes.",
   "main": "dist/index.js",
   "module": "es/index.js",
