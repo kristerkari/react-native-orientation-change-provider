@@ -31,6 +31,10 @@ export class OrientationChangeProvider extends Component {
   }
 
   render() {
-    return <Wrapper key={Date.now()}>{this.props.children}</Wrapper>;
+    return (
+      <Wrapper style={{ display: "flex", flexGrow: 1 }} key={Date.now()}>
+        {this.props.children}
+      </Wrapper>
+    );
   }
 }
