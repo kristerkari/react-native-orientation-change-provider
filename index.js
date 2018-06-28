@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Dimensions, View } from "react-native";
 
-const Wrapper = React.Fragment || View;
+const Wrapper = View;
 
 const isPortrait = () => {
   const dim = Dimensions.get("screen");
