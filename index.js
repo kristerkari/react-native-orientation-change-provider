@@ -1,7 +1,12 @@
 import React, { Component } from "react";
 import { Dimensions, View } from "react-native";
 
-const Wrapper = View;
+const Wrapper =
+  typeof React.Fragment === "symbol" ? (
+    React.Fragment
+  ) : (
+    <View style={{ display: "flex", flexGrow: 1 }} />
+  );
 
 const isPortrait = () => {
   const dim = Dimensions.get("screen");
@@ -31,10 +36,6 @@ export class OrientationChangeProvider extends Component {
   }
 
   render() {
-    return (
-      <Wrapper style={{ display: "flex", flexGrow: 1 }} key={Date.now()}>
-        {this.props.children}
-      </Wrapper>
-    );
+    return <Wrapper key={Date.now()}>{this.props.children}</Wrapper>;
   }
 }
